@@ -1,18 +1,29 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import store from '@/store';
 
 Vue.use(VueRouter);
 
 const routes = [
 	{
-		path: '/',
+		path: '/home',
 		name: 'home',
 		component: () => import('@/views/HomeView.vue'),
+		beforeEnter: (to, from, next) => {
+			if (store.getters.isAuthorized) {
+				store.dispatch('getAllUsers');
+				next();
+			} else router.push({ name: 'login' });
+		},
 	},
 	{
-		path: '/login',
+		path: '/',
 		name: 'login',
 		component: () => import('@/views/LoginView.vue'),
+		beforeEnter: (to, from, next) => {
+			if (store.getters.isAuthorized) router.push({ name: 'home' });
+			else next();
+		},
 	},
 ];
 

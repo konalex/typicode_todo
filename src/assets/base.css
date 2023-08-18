@@ -1,0 +1,35 @@
+/* semantic color variables for this project */
+:root {
+	--color-button-background: #519945;
+	--color-button-background-hover: #407a37;
+	--color-text: #353535;
+	--color-text-secondary: #5f5f5f;
+	--color-base-white: #fff;
+	--color-base-gray: #c3c3c3;
+	--color-base-gray-darken: #a5a5a5;
+	--color-base-red: #e53935;
+	--color-wrapper-background: #545454;
+	--border-radius-base: 0.313rem;
+}
+
+*,
+*::before,
+*::after {
+	position: relative;
+	box-sizing: border-box;
+	margin: 0;
+	font-weight: normal;
+}
+
+body {
+	min-height: 100vh;
+	font-family: Roboto, sans-serif;
+	font-size: 15px;
+	line-height: 1.6;
+	color: var(--color-text);
+	background: var(--color-background);
+	transition: color 0.5s, background-color 0.5s;
+	text-rendering: optimizelegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}

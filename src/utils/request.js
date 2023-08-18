@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-	baseURL: '/api',
+	baseURL: import.meta.env.VITE_PROXY_DOMAIN_REAL,
 	timeout: 1000,
 	withCredentials: false,
 });

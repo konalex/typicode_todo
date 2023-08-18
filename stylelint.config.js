@@ -37,6 +37,7 @@ module.exports = {
 		'selector-class-pattern': null,
 		'value-no-vendor-prefix': null,
 		'rule-empty-line-before': ['always', { ignore: ['after-comment', 'first-nested'] }],
+		indentation: 'tab',
 	},
 	ignoreFiles: ['**/*.js', '**/*.jsx', '**/*.tsx', '**/*.ts'],
 	overrides: [
